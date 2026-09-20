@@ -1,0 +1,2 @@
+/* Industries — tiêu đề hero dài: nới bề rộng để "Giải pháp chuyên sâu" nằm trên một dòng ở desktop */
+@media (min-width: 992px) { .hero-content { max-width: 760px; } }

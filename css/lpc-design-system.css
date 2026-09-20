@@ -1,0 +1,403 @@
+/* =========================================================================
+   LPC — Website Design System 2027 (theme trên Bootstrap 5.3)
+   Nạp SAU bootstrap.min.css và bootstrap-icons.min.css.
+   -------------------------------------------------------------------------
+   QUY TẮC MÀU (60 / 20 / 10 / 10)
+   - Primary  #0B1F44 (60%)  Navy: tiêu đề, nút chính, hero overlay, footer.
+   - Neutral  #F4F6F9 (20%)  Nền phụ: section xen kẽ, card, quote.
+   - Accent   #E31E24 (10%)  Đỏ: CTA "Liên hệ / RFP", nút trong hero, gạch nhấn.
+   - Support  #647488 (10%)  Xám xanh: chữ phụ, meta.
+   QUY TẮC KHOẢNG CÁCH
+   - Mọi block là <section class="section">: padding dọc 80 / 64 / 48px
+     (desktop / tablet / mobile). Không thêm margin ngoài giữa các section.
+   - Tiêu đề block: .section-head (mb 32px). Lưới card: .row .g-3 hoặc .g-4.
+   ========================================================================= */
+
+
+/* ---------- 1. Tokens thương hiệu + ghi đè biến Bootstrap ---------- */
+:root,
+[data-bs-theme="light"] {
+  --lpc-navy: #0B1F44;
+  --lpc-navy-800: #0E2550;
+  --lpc-navy-700: #13295A;
+  --lpc-navy-600: #1A3470;
+  --lpc-bluegray: #2E4677;
+  --lpc-red: #E31E24;
+  --lpc-red-600: #C4161C;
+  --lpc-neutral: #F4F6F9;
+  --lpc-slate: #647488;
+  --lpc-blue: #1E5BD8;
+  --lpc-blue-soft: #E8EFFC;
+
+  --lpc-section-y: 80px;
+  --lpc-header-h: 76px;
+  --lpc-shadow: 0 2px 10px rgba(11, 31, 68, 0.06);
+  --lpc-shadow-hover: 0 12px 28px rgba(11, 31, 68, 0.12);
+  --lpc-icon-color: var(--lpc-navy-600);
+  --lpc-feature-bg: linear-gradient(135deg, #0B1F44 0%, #13306B 100%);
+
+  --bs-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.625;
+  --bs-body-color: #1F2A3D;
+  --bs-body-color-rgb: 31, 42, 61;
+  --bs-body-bg: #FFFFFF;
+  --bs-emphasis-color: #0B1F44;
+  --bs-heading-color: #0B1F44;
+  --bs-secondary-color: #647488;
+  --bs-secondary-bg: #EDF1F6;
+  --bs-tertiary-bg: #F4F6F9;
+  --bs-tertiary-bg-rgb: 244, 246, 249;
+  --bs-border-color: #E3E8EF;
+  --bs-primary: #0B1F44;
+  --bs-primary-rgb: 11, 31, 68;
+  --bs-danger: #E31E24;
+  --bs-danger-rgb: 227, 30, 36;
+  --bs-link-color: #1E5BD8;
+  --bs-link-color-rgb: 30, 91, 216;
+  --bs-link-hover-color: #1747A8;
+  --bs-link-hover-color-rgb: 23, 71, 168;
+  --bs-border-radius: 6px;
+  --bs-border-radius-sm: 4px;
+  --bs-border-radius-lg: 10px;
+  --bs-focus-ring-color: rgba(30, 91, 216, 0.25);
+}
+
+[data-bs-theme="dark"] {
+  --lpc-icon-color: #FFFFFF;
+  --lpc-shadow: none;
+  --lpc-shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --lpc-feature-bg: linear-gradient(135deg, #0F2A5C 0%, #163A7A 100%);
+  --lpc-blue-soft: rgba(111, 162, 255, 0.14);
+
+  --bs-body-color: #E6EBF3;
+  --bs-body-color-rgb: 230, 235, 243;
+  --bs-body-bg: #0B1F44;
+  --bs-body-bg-rgb: 11, 31, 68;
+  --bs-emphasis-color: #FFFFFF;
+  --bs-heading-color: #FFFFFF;
+  --bs-secondary-color: #A9B4C6;
+  --bs-secondary-bg: #13295A;
+  --bs-tertiary-bg: #0E2550;
+  --bs-tertiary-bg-rgb: 14, 37, 80;
+  --bs-border-color: rgba(255, 255, 255, 0.12);
+  --bs-link-color: #6FA2FF;
+  --bs-link-color-rgb: 111, 162, 255;
+  --bs-link-hover-color: #9CC0FF;
+  --bs-link-hover-color-rgb: 156, 192, 255;
+}
+
+/* ---------- 2. Base ---------- */
+body { -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.25; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.btn:hover, .nav-link:hover, .dropdown-item:hover, .card a:hover { text-decoration: none; }
+.container { --bs-gutter-x: 2rem; }
+.text-secondary { color: var(--bs-secondary-color) !important; }
+.fs-7 { font-size: 0.875rem; }
+.fs-8 { font-size: 0.75rem; }
+.fw-800 { font-weight: 800; }
+.icon-lg { font-size: 2rem; line-height: 1; color: var(--lpc-icon-color); }
+.icon-md { font-size: 1.5rem; line-height: 1; color: var(--lpc-icon-color); }
+
+/* ---------- 3. Khoảng cách block (đồng bộ toàn site) ---------- */
+.section { padding-block: var(--lpc-section-y); }
+/* Hai section cùng nền nối tiếp: bỏ padding-top để khoảng cách luôn = 1 × section-y */
+.section:not(.section-alt):not(.section-dark) + .section:not(.section-alt):not(.section-dark),
+.section-alt + .section-alt { padding-top: 0; }
+.section-alt { background: var(--bs-tertiary-bg); }
+.section-dark { background: var(--lpc-navy); }
+.section-head { margin-bottom: 2rem; }
+@media (max-width: 991.98px) { :root { --lpc-section-y: 64px; } }
+@media (max-width: 575.98px) { :root { --lpc-section-y: 48px; } }
+
+/* ---------- 4. Typography ---------- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--bs-heading-color);
+}
+.eyebrow-dash::before { content: ""; width: 24px; height: 2px; background: var(--lpc-red); }
+.display-lpc {
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  font-weight: 800; line-height: 1.14; letter-spacing: -.01em; text-transform: uppercase;
+}
+.section-title {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lpc-blue);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-weight: 700; text-transform: uppercase;
+}
+.section-title::after { content: ""; display: block; width: 32px; height: 3px; margin-top: .5rem; background: var(--lpc-red); }
+.section-sub { margin: .5rem 0 0 calc(1rem + 3px); color: var(--bs-secondary-color); font-size: .875rem; }
+.link-more { font-size: .875rem; font-weight: 500; white-space: nowrap; }
+.link-more::after { content: "\F138"; font-family: "bootstrap-icons"; margin-left: .35rem; vertical-align: -2px; }
+
+/* ---------- 5. Buttons (dùng kèm .btn của Bootstrap) ---------- */
+.btn { --bs-btn-font-weight: 600; --bs-btn-padding-x: 1.35rem; --bs-btn-padding-y: .7rem; --bs-btn-font-size: .875rem; --bs-btn-border-radius: 4px; }
+.btn-sm { --bs-btn-padding-x: .9rem; --bs-btn-padding-y: .45rem; --bs-btn-font-size: .75rem; }
+.btn-lpc {  /* Nút chính: navy ở light, đỏ ở dark */
+  --bs-btn-color: #fff; --bs-btn-bg: var(--lpc-navy); --bs-btn-border-color: var(--lpc-navy);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: var(--lpc-navy-600); --bs-btn-hover-border-color: var(--lpc-navy-600);
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: var(--lpc-navy-600); --bs-btn-active-border-color: var(--lpc-navy-600);
+}
+[data-bs-theme="dark"] .btn-lpc,
+.btn-accent {
+  --bs-btn-color: #fff; --bs-btn-bg: var(--lpc-red); --bs-btn-border-color: var(--lpc-red);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: var(--lpc-red-600); --bs-btn-hover-border-color: var(--lpc-red-600);
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: var(--lpc-red-600); --bs-btn-active-border-color: var(--lpc-red-600);
+}
+.btn-blue {
+  --bs-btn-color: #fff; --bs-btn-bg: var(--lpc-blue); --bs-btn-border-color: var(--lpc-blue);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: #1747A8; --bs-btn-hover-border-color: #1747A8;
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: #1747A8; --bs-btn-active-border-color: #1747A8;
+}
+.btn-outline-lpc {
+  --bs-btn-color: var(--bs-heading-color); --bs-btn-border-color: currentColor; --bs-btn-bg: transparent;
+  --bs-btn-hover-color: var(--bs-body-bg); --bs-btn-hover-bg: var(--bs-heading-color); --bs-btn-hover-border-color: var(--bs-heading-color);
+  --bs-btn-active-color: var(--bs-body-bg); --bs-btn-active-bg: var(--bs-heading-color); --bs-btn-active-border-color: var(--bs-heading-color);
+  border-width: 1.5px;
+}
+.btn-ghost {  /* Viền trắng — dùng trên nền tối (hero, CTA band) */
+  --bs-btn-color: #fff; --bs-btn-border-color: rgba(255, 255, 255, .75); --bs-btn-bg: transparent;
+  --bs-btn-hover-color: var(--lpc-navy); --bs-btn-hover-bg: #fff; --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: var(--lpc-navy); --bs-btn-active-bg: #fff; --bs-btn-active-border-color: #fff;
+  border-width: 1.5px;
+}
+.btn-arrow::after { content: "\F138"; font-family: "bootstrap-icons"; margin-left: .5rem; vertical-align: -2px; font-weight: 400; }
+.arrow-btn {
+  flex: none; width: 30px; height: 30px;
+  display: inline-grid; place-items: center;
+  border-radius: 50%; border: 0;
+  background: var(--lpc-navy); color: #fff; font-size: .9rem;
+}
+[data-bs-theme="dark"] .arrow-btn { background: #fff; color: var(--lpc-navy); }
+
+/* ---------- 6. Header ---------- */
+.site-header { --bs-navbar-padding-y: 0; min-height: var(--lpc-header-h); background: var(--bs-body-bg); border-bottom: 1px solid var(--bs-border-color); }
+.site-header .navbar-brand svg { height: 48px; width: auto; display: block; }
+.site-header .nav-link { white-space: nowrap; font-size: .875rem; font-weight: 500; color: var(--bs-heading-color); padding-block: 1.6rem; border-bottom: 2px solid transparent; }
+.site-header .nav-link.active, .site-header .nav-link:hover { color: var(--bs-heading-color); }
+.site-header .nav-link.active { font-weight: 700; border-color: var(--lpc-red); }
+.site-header .dropdown-menu { --bs-dropdown-font-size: .875rem; --bs-dropdown-border-color: var(--bs-border-color); --bs-dropdown-link-active-bg: var(--lpc-navy); box-shadow: var(--lpc-shadow-hover); margin-top: 0; }
+.header-tool { background: none; border: 0; padding: .35rem; font-size: 1.15rem; color: var(--bs-heading-color); line-height: 1; }
+.site-header .btn { white-space: nowrap; }
+.lang-switch { font-size: .875rem; color: var(--bs-heading-color); white-space: nowrap; }
+.lang-switch a { color: var(--bs-secondary-color); }
+@media (min-width: 1400px) { .site-header .navbar-nav .nav-link { padding-inline: .6rem; } }
+@media (max-width: 1399.98px) {
+  .site-header .nav-link { padding-block: .8rem; border-bottom: 1px solid var(--bs-border-color); }
+  .site-header .nav-link.active { border-color: var(--bs-border-color); color: var(--lpc-red); }
+  .site-header .dropdown-menu { box-shadow: none; border: 0; padding-left: 1rem; }
+}
+.logo-text { fill: currentColor; }
+
+/* ---------- 7. Hero (luôn tối: đặt data-bs-theme="dark" trên .hero) ---------- */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: center;
+  min-height: 520px;
+  background: var(--lpc-navy); color: #fff;
+}
+.hero > .media { position: absolute; inset: 0; z-index: -2; border-radius: 0; aspect-ratio: auto; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(11,31,68,.95) 0%, rgba(11,31,68,.8) 40%, rgba(11,31,68,.2) 75%, rgba(11,31,68,.4) 100%);
+}
+.hero > .container { position: relative; padding-block: 5rem; }
+.hero-content { max-width: 760px; }
+.hero-lead { margin-top: 1rem; font-size: 1.125rem; color: rgba(255,255,255,.92); }
+.hero-text { margin-top: .75rem; color: rgba(255,255,255,.8); max-width: 580px; }
+.hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero-keywords {
+  position: absolute; right: calc(var(--bs-gutter-x) * .5); bottom: 3rem;
+  padding-left: .75rem; border-left: 2px solid var(--lpc-red);
+  font-size: .8125rem; font-weight: 600; letter-spacing: .06em; line-height: 1.7; text-transform: uppercase;
+}
+.hero-sm { min-height: 420px; }
+@media (max-width: 767.98px) { .hero { min-height: 460px; } .hero > .container { padding-block: 3.5rem; } }
+
+/* Thanh số liệu đè lên đáy hero */
+.hero-stats { position: relative; z-index: 2; margin-top: -2.5rem; }
+
+/* ---------- 8. Ảnh / placeholder ----------
+   <div class="media ph-city"><img src="..." alt="..." loading="lazy"></div>
+   Chưa có ảnh thật: bỏ <img>, placeholder gradient + skyline sẽ hiển thị. */
+.media {
+  position: relative; overflow: hidden;
+  border-radius: var(--bs-border-radius);
+  aspect-ratio: 16 / 9;
+  background-color: var(--lpc-navy-700);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' fill-opacity='.14' d='M0 120V78h18V60h14v18h10V40h22v38h8V52h16v26h12V24h8V8h6v16h8v54h10V58h18v20h12V36h24v42h8V66h14v12h10V48h20v30h12V30h8V14h6v16h8v48h10V62h16v16h12V44h22v34h10V70h14v8h18v42z'/%3E%3C/svg%3E"),
+    var(--ph, linear-gradient(160deg, #3C6DB5 0%, #1A3470 55%, #0B1F44 100%));
+  background-repeat: no-repeat;
+  background-position: bottom center, center;
+  background-size: 100% 55%, cover;
+}
+.media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.media-4x3 { aspect-ratio: 4 / 3; }
+.media-1x1 { aspect-ratio: 1; }
+.media-21x9 { aspect-ratio: 21 / 9; }
+.media-fill { aspect-ratio: auto; height: 100%; min-height: 240px; }
+.ph-city   { --ph: linear-gradient(170deg, #9CC3EA 0%, #4F82C4 45%, #1A3470 100%); }
+.ph-night  { --ph: linear-gradient(170deg, #1B3B78 0%, #0E2550 50%, #060F24 100%); }
+.ph-sunset { --ph: linear-gradient(170deg, #F4C79A 0%, #7E9CC9 45%, #1A3470 100%); }
+.ph-green  { --ph: linear-gradient(170deg, #BFE3C0 0%, #5E9E73 45%, #1F4D3A 100%); }
+.ph-site   { --ph: linear-gradient(170deg, #D9E3EE 0%, #9AA9BC 45%, #4B5A70 100%); }
+.ph-tech   { --ph: radial-gradient(circle at 70% 40%, #3D8BFF 0%, #1A3470 45%, #0B1F44 100%); }
+.ph-people { --ph: linear-gradient(170deg, #C9D6E6 0%, #7F93AE 50%, #2E4677 100%); }
+.blueprint,
+.feature-block.blueprint {
+  background-image:
+    linear-gradient(rgba(111,162,255,.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111,162,255,.16) 1px, transparent 1px),
+    var(--lpc-feature-bg);
+  background-size: 24px 24px, 24px 24px, cover;
+}
+
+/* ---------- 9. Stats ---------- */
+.stats { background: var(--bs-body-bg); border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); box-shadow: var(--lpc-shadow); }
+.stats > [class*="col"] { padding: 1.5rem; border-right: 1px solid var(--bs-border-color); }
+.stats > [class*="col"]:last-child { border-right: 0; }
+@media (max-width: 767.98px) {
+  .stats > [class*="col"] { border-bottom: 1px solid var(--bs-border-color); }
+  .stats > [class*="col"]:nth-child(2n) { border-right: 0; }
+}
+.stat-value { font-size: 2rem; font-weight: 700; line-height: 1; color: var(--bs-heading-color); }
+.stat-label { margin-top: .5rem; font-size: .875rem; color: var(--bs-secondary-color); }
+.stats-plain { background: transparent; border: 0; box-shadow: none; }
+
+/* ---------- 10. Cards ---------- */
+.card { --bs-card-border-color: var(--bs-border-color); --bs-card-bg: var(--bs-body-bg); box-shadow: var(--lpc-shadow); overflow: hidden; }
+[data-bs-theme="dark"] .card { --bs-card-bg: var(--bs-secondary-bg); }
+.card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+.card-hover:hover { transform: translateY(-3px); box-shadow: var(--lpc-shadow-hover); }
+.card .media { border-radius: 0; }
+.card-title { font-size: 1rem; font-weight: 700; color: var(--bs-heading-color); }
+.card-meta { font-size: .75rem; color: var(--bs-secondary-color); }
+
+/* Card tính năng / năng lực: icon + tiêu đề + mô tả, nền neutral */
+.feature-card {
+  height: 100%; padding: 1.5rem;
+  background: var(--bs-tertiary-bg);
+  border: 1px solid transparent; border-radius: var(--bs-border-radius);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.feature-card:hover { transform: translateY(-3px); box-shadow: var(--lpc-shadow-hover); border-color: var(--bs-border-color); }
+.feature-card .icon-lg { display: inline-block; margin-bottom: .75rem; }
+.feature-card h3 { font-size: .9375rem; font-weight: 700; margin: 0; }
+.feature-card p { font-size: .8125rem; color: var(--bs-secondary-color); margin: .25rem 0 0; }
+.section-alt .feature-card { background: var(--bs-body-bg); }
+
+/* Card dự án */
+.project-card .card-body { position: relative; padding-right: 3.5rem; }
+.project-card .card-title { font-size: .9375rem; }
+.project-card .arrow-btn { position: absolute; right: 1rem; bottom: 1rem; }
+
+/* Tag */
+.tag { display: inline-block; padding: .2rem .6rem; font-size: .75rem; color: var(--lpc-navy-600); background: var(--lpc-blue-soft); border-radius: 4px; }
+[data-bs-theme="dark"] .tag { color: #CFE0FF; }
+
+/* Danh sách check */
+.check-list { list-style: none; padding: 0; margin: 0; }
+.check-list li { position: relative; padding-left: 1.75rem; margin-top: .5rem; font-size: .9375rem; }
+.check-list li::before { content: "\F26E"; font-family: "bootstrap-icons"; position: absolute; left: 0; top: 0; color: var(--lpc-blue); font-size: 1.1rem; }
+
+/* ---------- 11. Tabs & chip lọc ---------- */
+.nav-underline { --bs-nav-link-color: var(--bs-secondary-color); --bs-nav-link-hover-color: var(--bs-heading-color); --bs-nav-underline-link-active-color: var(--bs-heading-color); --bs-nav-link-font-size: .875rem; border-bottom: 1px solid var(--bs-border-color); flex-wrap: nowrap; overflow-x: auto; gap: 2rem; }
+.nav-underline .nav-link { white-space: nowrap; padding-block: .85rem; }
+.nav-underline .nav-link.active { border-bottom-color: var(--lpc-blue); }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { padding: .5rem 1rem; font-size: .875rem; color: var(--bs-heading-color); background: var(--bs-tertiary-bg); border: 1px solid transparent; border-radius: 4px; cursor: pointer; }
+.chip:hover { border-color: var(--bs-border-color); }
+.chip.active { background: var(--lpc-navy); color: #fff; }
+[data-bs-theme="dark"] .chip.active { background: var(--lpc-red); }
+
+/* ---------- 12. Quy trình ---------- */
+.process { list-style: none; padding: 0; margin: 0; }
+.process-num { position: relative; font-size: 1.75rem; font-weight: 700; line-height: 1; color: var(--bs-heading-color); }
+@media (min-width: 768px) {
+  .process > :not(:last-child) .process-num::after { content: ""; position: absolute; left: 3rem; right: 1rem; top: .9rem; border-top: 1.5px dashed var(--lpc-blue); }
+}
+.process h3 { margin: .5rem 0 0; font-size: .9375rem; font-weight: 600; }
+.process p { margin: 0; font-size: .8125rem; color: var(--bs-secondary-color); }
+
+/* ---------- 13. Khối nổi bật / CTA band / Quote ---------- */
+.feature-block { position: relative; overflow: hidden; height: 100%; padding: 2rem; border-radius: var(--bs-border-radius); background: var(--lpc-feature-bg); color: #fff; }
+.feature-block h2, .feature-block h3 { color: #fff; font-size: clamp(1.125rem, 1.6vw, 1.375rem); text-transform: uppercase; }
+.feature-block p { color: rgba(255,255,255,.82); }
+
+.cta-band {
+  position: relative; isolation: isolate; overflow: hidden;
+  padding: 2.5rem 3rem; border-radius: var(--bs-border-radius);
+  background: var(--lpc-navy); color: #fff;
+}
+.cta-band > .media { position: absolute; inset: 0 0 0 40%; z-index: -2; border-radius: 0; aspect-ratio: auto; }
+.cta-band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--lpc-navy) 35%, rgba(11,31,68,.55) 70%, rgba(11,31,68,.3) 100%); }
+.cta-band h2, .cta-band h3 { color: #fff; margin: 0; font-size: clamp(1.125rem, 1.6vw, 1.375rem); text-transform: uppercase; }
+.cta-band p { color: rgba(255,255,255,.8); margin: .5rem 0 0; font-size: .875rem; }
+@media (max-width: 767.98px) { .cta-band { padding: 2rem 1.5rem; } .cta-band > .media { inset: 0; opacity: .35; } }
+
+.quote-card { height: 100%; padding: 2rem; background: var(--bs-tertiary-bg); border-radius: var(--bs-border-radius); font-style: italic; font-size: 1.0625rem; color: var(--bs-heading-color); }
+.quote-card::before { content: "\201C"; display: block; font: 800 4rem/.6 var(--bs-body-font-family); opacity: .3; }
+.quote-card cite { display: block; margin-top: 1rem; font-style: normal; font-weight: 700; }
+.quote-card cite::before { content: "—— "; font-weight: 400; }
+
+/* ---------- 14. Logo đối tác & chứng chỉ ---------- */
+.logo-tile { display: grid; place-items: center; height: 76px; padding: .75rem; background: #fff; border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); font-weight: 800; font-size: 1.05rem; color: var(--lpc-navy); text-align: center; }
+.cert-badge { width: 68px; height: 68px; margin: 0 auto .75rem; display: grid; place-items: center; border-radius: 50%; border: 3px double currentColor; font-size: .75rem; font-weight: 800; color: var(--lpc-navy-600); }
+[data-bs-theme="dark"] .cert-badge { color: #9CC0FF; }
+
+/* ---------- 15. Form (dùng .form-control/.form-select của Bootstrap) ---------- */
+.form-label { font-size: .875rem; font-weight: 500; color: var(--bs-heading-color); }
+.form-control, .form-select { font-size: .875rem; padding-block: .65rem; }
+.req { color: var(--lpc-red); }
+.upload-box { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1.5px dashed var(--bs-border-color); border-radius: 4px; font-size: .75rem; color: var(--bs-secondary-color); }
+.search-field { position: relative; }
+.search-field .bi { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--bs-secondary-color); }
+.search-field .form-control { padding-left: 2.6rem; }
+
+/* ---------- 16. Dashboard (BI mẫu) ---------- */
+.kpi { height: 100%; padding: 1rem 1.25rem; background: var(--bs-body-bg); border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); }
+.kpi-value { font-size: 1.625rem; font-weight: 700; color: var(--bs-heading-color); }
+.kpi-label { font-size: .75rem; color: var(--bs-secondary-color); }
+.kpi-trend { font-size: .75rem; font-weight: 600; margin-top: .5rem; }
+.kpi-trend.up { color: #11884B; }
+.kpi-trend.down { color: var(--lpc-red); }
+[data-bs-theme="dark"] .kpi-trend.up { color: #4ADE80; }
+.progress { --bs-progress-height: .5rem; --bs-progress-bg: var(--lpc-blue-soft); --bs-progress-bar-bg: var(--lpc-blue); }
+.bars { display: flex; align-items: flex-end; gap: 6px; height: 160px; border-bottom: 1px solid var(--bs-border-color); }
+.bars > span { flex: 1; background: linear-gradient(180deg, #4C8DFF, var(--lpc-blue)); border-radius: 3px 3px 0 0; }
+.bars > span.alt { background: #BFD3F7; }
+.donut { --v: 78; width: 120px; aspect-ratio: 1; flex: none; display: grid; place-items: center; position: relative; border-radius: 50%; background: conic-gradient(var(--lpc-blue) calc(var(--v) * 1%), var(--lpc-blue-soft) 0); }
+.donut::before { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: var(--bs-body-bg); }
+.donut > * { position: relative; text-align: center; font-weight: 700; line-height: 1.2; color: var(--bs-heading-color); }
+.donut small { display: block; font-size: .625rem; font-weight: 400; color: var(--bs-secondary-color); }
+.legend { list-style: none; padding: 0; margin: 0; }
+.legend li { display: flex; align-items: center; gap: .5rem; font-size: .75rem; margin-top: .4rem; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; background: var(--c, var(--lpc-blue)); }
+
+/* ---------- 17. Footer (luôn tối: data-bs-theme="dark") ---------- */
+.site-footer { background: var(--lpc-navy); color: rgba(255,255,255,.75); font-size: .875rem; }
+.site-footer .navbar-brand svg { height: 48px; width: auto; }
+.footer-tagline { margin-top: 1rem; color: #fff; font-weight: 500; text-transform: uppercase; line-height: 1.45; }
+.footer-tagline::after { content: ""; display: block; width: 48px; height: 3px; margin-top: 1rem; background: var(--lpc-red); }
+.site-footer h2 { font-size: .875rem; color: #fff; margin-bottom: .9rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li a { display: inline-block; padding: .2rem 0; color: rgba(255,255,255,.7); }
+.site-footer li a:hover { color: #fff; }
+:root[data-bs-theme="dark"] .site-footer { background: #081733; border-top: 1px solid rgba(255,255,255,.08); }
+.site-footer .btn { white-space: nowrap; }
+.socials a { color: #fff; font-size: 1.25rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); font-size: .75rem; }
+.footer-bottom a { color: rgba(255,255,255,.7); }
+
+/* ---------- 18. Tiện ích ---------- */
+.divider-accent { width: 32px; height: 2px; background: var(--lpc-red); border: 0; opacity: 1; margin: 1.5rem 0; }
+.back-to-top { position: fixed; right: 1rem; bottom: 1rem; z-index: 40; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.back-to-top.show { opacity: 1; pointer-events: auto; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+a.feature-card, a.feature-card:hover { color: inherit; text-decoration: none; }

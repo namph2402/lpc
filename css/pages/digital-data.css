@@ -1,0 +1,22 @@
+/* Digital & Data — biểu đồ BI mẫu (cột nhóm + donut nhiều phần) */
+:root, [data-bs-theme="light"] { --dd-c1: #13295A; --dd-c2: #1E5BD8; --dd-c3: #6FA2FF; --dd-c4: #BFD3F7; }
+[data-bs-theme="dark"] { --dd-c1: #DCE8FF; --dd-c2: #9CC0FF; --dd-c3: #4C8DFF; --dd-c4: #1E5BD8; }
+
+.dd-chart { display: flex; gap: .5rem; }
+.dd-yaxis { display: flex; flex-direction: column; justify-content: space-between; height: 160px; margin-top: -.4em; margin-bottom: -.4em; text-align: right; }
+.dd-bars { gap: 4px; }
+.dd-bars > div { flex: 1; height: 100%; display: flex; align-items: flex-end; gap: 2px; }
+.dd-bars > div > span { flex: 1; min-width: 0; background: linear-gradient(180deg, #4C8DFF, var(--lpc-blue)); border-radius: 3px 3px 0 0; }
+.dd-bars > div > span.alt, .legend i.dd-plan { background: #BFD3F7; }
+.dd-bars > div:hover > span { filter: brightness(1.1); }
+.dd-xaxis { display: flex; gap: 4px; margin-top: .35rem; }
+.dd-xaxis > span { flex: 1; text-align: center; white-space: nowrap; }
+@media (max-width: 575.98px) { .dd-xaxis > span:nth-child(even) { visibility: hidden; } }
+
+.dd-donut {
+  width: 140px;
+  background: conic-gradient(var(--dd-c1) 0 48%, var(--dd-c2) 0 70%, var(--dd-c3) 0 85%, var(--dd-c4) 0);
+}
+.dd-donut::before { inset: 20px; }
+.dd-plot { min-width: 0; }
+[data-bs-theme="dark"] .dd-bars > div > span.alt, [data-bs-theme="dark"] .legend i.dd-plan { background: rgba(111, 162, 255, .35); }
