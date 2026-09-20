@@ -177,7 +177,11 @@ a:hover { text-decoration: underline; }
 
 /* ---------- 6. Header ---------- */
 .site-header { --bs-navbar-padding-y: 0; min-height: var(--lpc-header-h); background: var(--bs-body-bg); border-bottom: 1px solid var(--bs-border-color); }
-.site-header .navbar-brand svg { height: 48px; width: auto; display: block; }
+.navbar-brand .logo-img { display: block; width: auto; }
+.site-header .logo-img { height: 44px; }
+.navbar-brand .logo-on-dark { display: none; }
+[data-bs-theme="dark"] .navbar-brand .logo-on-light { display: none; }
+[data-bs-theme="dark"] .navbar-brand .logo-on-dark { display: block; }
 .site-header .nav-link { white-space: nowrap; font-size: .875rem; font-weight: 500; color: var(--bs-heading-color); padding-block: 1.6rem; border-bottom: 2px solid transparent; }
 .site-header .nav-link.active, .site-header .nav-link:hover { color: var(--bs-heading-color); }
 .site-header .nav-link.active { font-weight: 700; border-color: var(--lpc-red); }
@@ -186,13 +190,20 @@ a:hover { text-decoration: underline; }
 .site-header .btn { white-space: nowrap; }
 .lang-switch { font-size: .875rem; color: var(--bs-heading-color); white-space: nowrap; }
 .lang-switch a { color: var(--bs-secondary-color); }
-@media (min-width: 1400px) { .site-header .navbar-nav .nav-link { padding-inline: .6rem; } }
-@media (max-width: 1399.98px) {
+@media (min-width: 1200px) { .site-header .navbar-nav .nav-link { padding-inline: .5rem; } }
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .site-header .navbar-nav .nav-link { font-size: .8125rem; padding-inline: .3rem; }
+  .site-header > .container > .d-flex { gap: .25rem !important; }
+  .site-header .lang-switch { display: none; }
+  .site-header .btn { --bs-btn-padding-x: .9rem; --bs-btn-font-size: .8125rem; }
+  .site-header .logo-img { height: 38px; }
+}
+@media (max-width: 1199.98px) {
   .site-header .nav-link { padding-block: .8rem; border-bottom: 1px solid var(--bs-border-color); }
   .site-header .nav-link.active { border-color: var(--bs-border-color); color: var(--lpc-red); }
   .site-header .dropdown-menu { box-shadow: none; border: 0; padding-left: 1rem; }
 }
-.logo-text { fill: currentColor; }
+
 
 /* ---------- 7. Hero (luôn tối: đặt data-bs-theme="dark" trên .hero) ---------- */
 .hero {
@@ -382,7 +393,7 @@ a:hover { text-decoration: underline; }
 
 /* ---------- 17. Footer (luôn tối: data-bs-theme="dark") ---------- */
 .site-footer { background: var(--lpc-navy); color: rgba(255,255,255,.75); font-size: .875rem; }
-.site-footer .navbar-brand svg { height: 48px; width: auto; }
+.site-footer .logo-img { height: 52px; }
 .footer-tagline { margin-top: 1rem; color: #fff; font-weight: 500; text-transform: uppercase; line-height: 1.45; }
 .footer-tagline::after { content: ""; display: block; width: 48px; height: 3px; margin-top: 1rem; background: var(--lpc-red); }
 .site-footer h2 { font-size: .875rem; color: #fff; margin-bottom: .9rem; }

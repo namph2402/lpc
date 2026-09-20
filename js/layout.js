@@ -6,32 +6,28 @@
 (function () {
   "use strict";
 
+  /* Logo thật (PNG nền trong suốt). Bản trắng tự hiện trên nền tối. */
   var LOGO =
-    '<svg viewBox="0 0 168 56" role="img" aria-label="LPC — Responsive to change">' +
-    '<path d="M4 50 C16 40 22 24 25 2 C28 24 34 40 46 50" fill="none" stroke="#E31E24" stroke-width="4" stroke-linecap="round"/>' +
-    '<path d="M13 50 C21 42 24 30 25 16 C26 30 29 42 37 50" fill="none" stroke="#1E5BD8" stroke-width="3" stroke-linecap="round"/>' +
-    '<path d="M20 50 C24 44 25 38 25 30 C25 38 26 44 30 50" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>' +
-    '<text x="54" y="36" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" font-style="italic" fill="#1E5BD8" letter-spacing="1">LPC</text>' +
-    '<text x="54" y="50" font-family="Inter, Arial, sans-serif" font-size="9" class="logo-text">Responsive to change</text>' +
-    "</svg>";
+    '<img class="logo-img logo-on-light" src="assets/img/logo-lpc-h.png" width="681" height="220" alt="LPC — Responsive to change">' +
+    '<img class="logo-img logo-on-dark" src="assets/img/logo-lpc-h-white.png" width="681" height="220" alt="" aria-hidden="true">';
 
   /* Menu: [key, href, nhãn, (menu con)] */
   var NAV = [
-    ["home", "index.html", "Home"],
-    ["capabilities", "capabilities.html", "Capabilities", [
+    ["home", "index.html", "Trang chủ"],
+    ["capabilities", "capabilities.html", "Năng lực", [
       ["capabilities", "capabilities.html", "Tổng quan năng lực"],
       ["engineering", "engineering.html", "Engineering"],
       ["digital-engineering", "digital-engineering.html", "Digital Engineering"],
       ["pm-cm", "pm-cm.html", "PM/CM"],
       ["digital-data", "digital-data.html", "Digital & Data"],
     ]],
-    ["projects", "projects.html", "Projects"],
+    ["projects", "projects.html", "Dự án"],
     ["tech-hub", "tech-hub.html", "Tech Hub"],
     ["engineering-tools", "engineering-tools.html", "Engineering Tools"],
-    ["industries", "industries.html", "Industries"],
+    ["industries", "industries.html", "Lĩnh vực"],
     ["sustainability", "sustainability.html", "Sustainability"],
     ["insights", "insights.html", "Insights"],
-    ["about", "about.html", "About", [
+    ["about", "about.html", "Giới thiệu", [
       ["about", "about.html", "Giới thiệu LPC"],
       ["partners", "partners.html", "Đối tác"],
       ["trust-center", "trust-center.html", "Trust Center"],
@@ -59,15 +55,15 @@
 
   var HEADER =
     '<a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-lpc btn-sm" href="#main">Bỏ qua đến nội dung</a>' +
-    '<header class="site-header navbar navbar-expand-xxl sticky-top">' +
+    '<header class="site-header navbar navbar-expand-xl sticky-top">' +
     '<div class="container">' +
-    '<a class="navbar-brand me-4" href="index.html" aria-label="LPC — Trang chủ">' + LOGO + "</a>" +
-    '<div class="d-flex align-items-center gap-2 ms-auto order-xxl-last">' +
+    '<a class="navbar-brand me-3 me-xl-4" href="index.html" aria-label="LPC — Trang chủ">' + LOGO + "</a>" +
+    '<div class="d-flex align-items-center gap-2 ms-auto order-xl-last">' +
     '<button class="header-tool" type="button" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Tìm kiếm"><i class="bi bi-search"></i></button>' +
     '<span class="lang-switch d-none d-sm-inline mx-1"><strong>VI</strong> | <a href="#" hreflang="en" lang="en">EN</a></span>' +
     '<button class="header-tool" type="button" data-theme-toggle aria-label="Chuyển giao diện sáng/tối"><i class="bi bi-moon-stars"></i></button>' +
-    '<a class="btn btn-accent btn-arrow d-none d-md-inline-flex ms-2" href="contact.html">Liên hệ / RFP</a>' +
-    '<button class="header-tool d-xxl-none ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="Mở menu"><i class="bi bi-list fs-3"></i></button>' +
+    '<a class="btn btn-accent btn-arrow d-none d-md-inline-flex ms-1 ms-xxl-2" href="contact.html">Liên hệ<span class="d-none d-xxl-inline">&nbsp;/ RFP</span></a>' +
+    '<button class="header-tool d-xl-none ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="Mở menu"><i class="bi bi-list fs-3"></i></button>' +
     "</div>" +
     '<div class="offcanvas offcanvas-end" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">' +
     '<div class="offcanvas-header border-bottom">' +
@@ -75,8 +71,8 @@
     '<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Đóng"></button>' +
     "</div>" +
     '<div class="offcanvas-body">' +
-    '<ul class="navbar-nav mx-xxl-auto gap-xxl-1">' + NAV.map(navItem).join("") + "</ul>" +
-    '<div class="d-xxl-none mt-4 d-grid gap-3">' +
+    '<ul class="navbar-nav mx-xl-auto gap-xl-1">' + NAV.map(navItem).join("") + "</ul>" +
+    '<div class="d-xl-none mt-4 d-grid gap-3">' +
     '<a class="btn btn-accent btn-arrow" href="contact.html">Liên hệ / RFP</a>' +
     '<span class="lang-switch text-center"><strong>VI</strong> | <a href="#" hreflang="en" lang="en">EN</a></span>' +
     "</div></div></div>" +
@@ -95,7 +91,7 @@
     '<div class="container py-5">' +
     '<div class="row g-4 py-lg-3">' +
     '<div class="col-12 col-lg-3">' +
-    '<a class="navbar-brand text-white" href="index.html" aria-label="LPC — Trang chủ">' + LOGO + "</a>" +
+    '<a class="navbar-brand footer-brand" href="index.html" aria-label="LPC — Trang chủ">' + LOGO + "</a>" +
     '<p class="footer-tagline">Engineering<br>Technology<br>People<br>A better tomorrow</p>' +
     "</div>" +
     '<div class="col-6 col-md-4 col-lg-2"><h2>Năng lực</h2><ul>' +

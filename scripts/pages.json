@@ -1,21 +1,241 @@
 {
   "site": "https://lpc.vn",
   "pages": [
-    {"slug": "home", "file": "index.html", "eyebrow": "Digital Engineering Hub", "title": "Kỹ thuật kiến tạo giá trị bền vững", "seo_title": "LPC — Kỹ thuật kiến tạo giá trị bền vững | Engineering · Technology · People", "description": "LPC đồng hành cùng khách hàng kiến tạo công trình hiệu quả, bền vững bằng kỹ thuật vững chắc, công nghệ tiên tiến và con người tận tâm. Kết nối Việt Nam – Pháp.", "keywords": ["People", "Projects", "Technology", "Sustainability"], "priority": "1.0"},
-    {"slug": "capabilities", "file": "capabilities.html", "eyebrow": "Our Capabilities", "title": "Năng lực toàn diện cho mọi giai đoạn công trình", "seo_title": "Năng lực | LPC — Năng lực toàn diện cho mọi giai đoạn công trình", "description": "Engineering, Digital Engineering, PM/CM, Tech Hub, Digital & Data và Sustainability — năng lực tích hợp của LPC cho mọi giai đoạn dự án xây dựng.", "keywords": ["Engineering", "Digital", "PM/CM", "Data"], "priority": "0.9"},
-    {"slug": "engineering", "file": "engineering.html", "eyebrow": "Engineering", "title": "Nền tảng kỹ thuật cho những công trình tương lai", "seo_title": "Engineering — Tư vấn thiết kế kỹ thuật | LPC", "description": "Tư vấn thiết kế kỹ thuật toàn diện: hạ tầng giao thông, dân dụng, công nghiệp, năng lượng — đạt chuẩn quốc tế, ứng dụng BIM và công nghệ hiện đại.", "keywords": ["Structure", "Infrastructure", "MEP", "BIM"], "priority": "0.8"},
-    {"slug": "digital-engineering", "file": "digital-engineering.html", "eyebrow": "Digital Engineering", "title": "Kết nối dữ liệu, kiến tạo giá trị thực", "seo_title": "Digital Engineering — BIM, CDE, Digital Twin | LPC", "description": "BIM & 3D Modeling, CDE Platform, Digital Twin và Scan to BIM — ứng dụng công nghệ số trong suốt vòng đời công trình: thiết kế, thi công, vận hành.", "keywords": ["BIM", "CDE", "Digital Twin", "Smart Construction"], "priority": "0.8"},
-    {"slug": "pm-cm", "file": "pm-cm.html", "eyebrow": "PM/CM", "title": "Quản lý hiệu quả, kiến tạo thành công", "seo_title": "PM/CM — Quản lý dự án & quản lý thi công | LPC", "description": "Tư vấn quản lý dự án, quản lý thi công, tư vấn giám sát và quản lý chi phí — kiểm soát tiến độ, chất lượng, ngân sách từ ý tưởng đến vận hành.", "keywords": ["People", "Process", "Technology", "Performance"], "priority": "0.8"},
-    {"slug": "digital-data", "file": "digital-data.html", "eyebrow": "Digital & Data", "title": "Dữ liệu tạo khác biệt, kiến tạo tương lai", "seo_title": "Digital & Data — Data Platform, BI, AI | LPC", "description": "Data Platform, BI Dashboard, AI & Prediction và Document Intelligence — biến dữ liệu công trình thành quyết định nhanh và chính xác hơn.", "keywords": ["Data", "AI & Analytics", "Automation", "Better Decisions"], "priority": "0.8"},
-    {"slug": "tech-hub", "file": "tech-hub.html", "eyebrow": "Tech Hub", "title": "Công nghệ kiến tạo giá trị thực tiễn", "seo_title": "Tech Hub — Công nghệ xây dựng & đổi mới sáng tạo | LPC", "description": "BIM & Digital Twin, Construction Tech, vật liệu & kết cấu, Smart Site & IoT, AI & Data — trung tâm công nghệ xây dựng và đổi mới sáng tạo của LPC.", "keywords": ["People", "Technology", "Collaboration", "Real Impact"], "priority": "0.8"},
-    {"slug": "projects", "file": "projects.html", "eyebrow": "Projects", "title": "Những công trình tạo giá trị bền vững", "seo_title": "Dự án tiêu biểu | LPC — Những công trình tạo giá trị bền vững", "description": "500+ dự án LPC đã thực hiện tại Việt Nam và Pháp: tòa nhà cao tầng, hạ tầng giao thông, công nghiệp, dân dụng và công trình công cộng.", "keywords": ["Real Projects", "Real People", "Real Impact"], "priority": "0.9"},
-    {"slug": "industries", "file": "industries.html", "eyebrow": "Industries", "title": "Giải pháp chuyên sâu cho từng lĩnh vực", "seo_title": "Lĩnh vực hoạt động | LPC — Giải pháp chuyên sâu cho từng ngành", "description": "Bất động sản, hạ tầng giao thông, công nghiệp, dân dụng, công trình công cộng — giải pháp kỹ thuật và quản lý chuyên biệt theo từng lĩnh vực.", "keywords": ["Know the industry", "Tailored solutions", "Higher value"], "priority": "0.8"},
-    {"slug": "sustainability", "file": "sustainability.html", "eyebrow": "Sustainability", "title": "Kiến tạo giá trị bền vững cho thế hệ tương lai", "seo_title": "Phát triển bền vững & ESG | LPC", "description": "Chiến lược ESG của LPC: giảm phát thải CO₂ hướng tới Net Zero, công trình xanh, sử dụng tài nguyên hiệu quả và trách nhiệm với cộng đồng.", "keywords": ["People", "Planet", "Progress", "Together"], "priority": "0.7"},
-    {"slug": "partners", "file": "partners.html", "eyebrow": "Partners", "title": "Cùng đối tác kiến tạo giá trị lớn hơn", "seo_title": "Đối tác chiến lược | LPC — Cùng kiến tạo giá trị lớn hơn", "description": "Mạng lưới 50+ đối tác chiến lược tại 10+ quốc gia của LPC trong tư vấn thiết kế, công nghệ, vật liệu, thi công và học thuật.", "keywords": ["Stronger together", "For a better tomorrow"], "priority": "0.7"},
-    {"slug": "trust-center", "file": "trust-center.html", "eyebrow": "Trust Center", "title": "Nền tảng niềm tin cho mọi công trình", "seo_title": "Trust Center — Chứng chỉ, tuân thủ & bảo mật | LPC", "description": "Chứng chỉ ISO 9001, ISO 14001, ISO 45001, ISO 19650, quy trình quản trị rủi ro, tuân thủ pháp lý và bảo mật dữ liệu tại LPC.", "keywords": ["Transparency", "Compliance", "Safety", "Security", "Trust"], "priority": "0.7"},
-    {"slug": "insights", "file": "insights.html", "eyebrow": "Insights", "title": "Kiến thức hôm nay cho công trình tốt hơn ngày mai", "seo_title": "Insights — Tin tức, xu hướng & kiến thức kỹ thuật | LPC", "description": "Bài viết, xu hướng và kinh nghiệm thực tế về kỹ thuật, BIM, quản lý dự án, pháp lý và phát triển bền vững từ đội ngũ chuyên gia LPC.", "keywords": ["People", "Ideas", "Technology", "Real Impact"], "priority": "0.8"},
-    {"slug": "about", "file": "about.html", "eyebrow": "About LPC", "title": "Hành trình kiến tạo giá trị bền vững", "seo_title": "Giới thiệu LPC — Hành trình kiến tạo giá trị bền vững từ 2007", "description": "LPC thành lập năm 2007, kết nối kinh nghiệm Việt Nam – Pháp với 500+ dự án, 100+ đối tác. Câu chuyện, giá trị cốt lõi và đội ngũ lãnh đạo.", "keywords": ["Local expertise", "Global knowledge", "Lasting value"], "priority": "0.8"},
-    {"slug": "contact", "file": "contact.html", "eyebrow": "Let's work together", "title": "Biến ý tưởng thành công trình thực tế", "seo_title": "Liên hệ & Gửi yêu cầu (RFP) | LPC", "description": "Liên hệ LPC hoặc gửi yêu cầu báo giá dự án (RFP) — phản hồi trong 24 giờ. Trụ sở Hà Nội, văn phòng đại diện Paris.", "keywords": ["People", "Expertise", "Partnership", "Real Projects"], "priority": "0.9"},
-    {"slug": "engineering-tools", "file": "engineering-tools.html", "eyebrow": "Engineering Tools", "title": "Công cụ kỹ thuật cho những quyết định tốt hơn", "seo_title": "Engineering Tools — Công cụ kỹ thuật trực tuyến miễn phí | LPC", "description": "Tính toán, so sánh, kiểm tra, dự toán và đánh giá hồ sơ trực tuyến: Ubot Quick Design, Punching Check, dự toán nhanh, Carbon Estimator, AI Assistant.", "keywords": ["BIM", "Structure", "Cost", "Sustainability"], "priority": "0.9"}
+    {
+      "slug": "home",
+      "file": "index.html",
+      "eyebrow": "Digital Engineering Hub",
+      "title": "Kỹ thuật kiến tạo giá trị bền vững",
+      "seo_title": "LPC — Kỹ thuật kiến tạo giá trị bền vững | Engineering · Technology · People",
+      "description": "LPC đồng hành cùng khách hàng kiến tạo công trình hiệu quả, bền vững bằng kỹ thuật vững chắc, công nghệ tiên tiến và con người tận tâm. Kết nối Việt Nam – Pháp.",
+      "keywords": [
+        "People",
+        "Projects",
+        "Technology",
+        "Sustainability"
+      ],
+      "priority": "1.0"
+    },
+    {
+      "slug": "capabilities",
+      "file": "capabilities.html",
+      "eyebrow": "Năng lực của chúng tôi",
+      "title": "Năng lực toàn diện cho mọi giai đoạn công trình",
+      "seo_title": "Năng lực | LPC — Năng lực toàn diện cho mọi giai đoạn công trình",
+      "description": "Engineering, Digital Engineering, PM/CM, Tech Hub, Digital & Data và Sustainability — năng lực tích hợp của LPC cho mọi giai đoạn dự án xây dựng.",
+      "keywords": [
+        "Engineering",
+        "Digital",
+        "PM/CM",
+        "Data"
+      ],
+      "priority": "0.9"
+    },
+    {
+      "slug": "engineering",
+      "file": "engineering.html",
+      "eyebrow": "Engineering",
+      "title": "Nền tảng kỹ thuật cho những công trình tương lai",
+      "seo_title": "Engineering — Tư vấn thiết kế kỹ thuật | LPC",
+      "description": "Tư vấn thiết kế kỹ thuật toàn diện: hạ tầng giao thông, dân dụng, công nghiệp, năng lượng — đạt chuẩn quốc tế, ứng dụng BIM và công nghệ hiện đại.",
+      "keywords": [
+        "Structure",
+        "Infrastructure",
+        "MEP",
+        "BIM"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "digital-engineering",
+      "file": "digital-engineering.html",
+      "eyebrow": "Digital Engineering",
+      "title": "Kết nối dữ liệu, kiến tạo giá trị thực",
+      "seo_title": "Digital Engineering — BIM, CDE, Digital Twin | LPC",
+      "description": "BIM & 3D Modeling, CDE Platform, Digital Twin và Scan to BIM — ứng dụng công nghệ số trong suốt vòng đời công trình: thiết kế, thi công, vận hành.",
+      "keywords": [
+        "BIM",
+        "CDE",
+        "Digital Twin",
+        "Smart Construction"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "pm-cm",
+      "file": "pm-cm.html",
+      "eyebrow": "PM/CM",
+      "title": "Quản lý hiệu quả, kiến tạo thành công",
+      "seo_title": "PM/CM — Quản lý dự án & quản lý thi công | LPC",
+      "description": "Tư vấn quản lý dự án, quản lý thi công, tư vấn giám sát và quản lý chi phí — kiểm soát tiến độ, chất lượng, ngân sách từ ý tưởng đến vận hành.",
+      "keywords": [
+        "People",
+        "Process",
+        "Technology",
+        "Performance"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "digital-data",
+      "file": "digital-data.html",
+      "eyebrow": "Digital & Data",
+      "title": "Dữ liệu tạo khác biệt, kiến tạo tương lai",
+      "seo_title": "Digital & Data — Data Platform, BI, AI | LPC",
+      "description": "Data Platform, BI Dashboard, AI & Prediction và Document Intelligence — biến dữ liệu công trình thành quyết định nhanh và chính xác hơn.",
+      "keywords": [
+        "Data",
+        "AI & Analytics",
+        "Automation",
+        "Better Decisions"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "tech-hub",
+      "file": "tech-hub.html",
+      "eyebrow": "Tech Hub",
+      "title": "Công nghệ kiến tạo giá trị thực tiễn",
+      "seo_title": "Tech Hub — Công nghệ xây dựng & đổi mới sáng tạo | LPC",
+      "description": "BIM & Digital Twin, Construction Tech, vật liệu & kết cấu, Smart Site & IoT, AI & Data — trung tâm công nghệ xây dựng và đổi mới sáng tạo của LPC.",
+      "keywords": [
+        "People",
+        "Technology",
+        "Collaboration",
+        "Real Impact"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "projects",
+      "file": "projects.html",
+      "eyebrow": "Dự án tiêu biểu",
+      "title": "Những công trình tạo giá trị bền vững",
+      "seo_title": "Dự án tiêu biểu | LPC — Những công trình tạo giá trị bền vững",
+      "description": "500+ dự án LPC đã thực hiện tại Việt Nam và Pháp: tòa nhà cao tầng, hạ tầng giao thông, công nghiệp, dân dụng và công trình công cộng.",
+      "keywords": [
+        "Real Projects",
+        "Real People",
+        "Real Impact"
+      ],
+      "priority": "0.9"
+    },
+    {
+      "slug": "industries",
+      "file": "industries.html",
+      "eyebrow": "Lĩnh vực hoạt động",
+      "title": "Giải pháp chuyên sâu cho từng lĩnh vực",
+      "seo_title": "Lĩnh vực hoạt động | LPC — Giải pháp chuyên sâu cho từng ngành",
+      "description": "Bất động sản, hạ tầng giao thông, công nghiệp, dân dụng, công trình công cộng — giải pháp kỹ thuật và quản lý chuyên biệt theo từng lĩnh vực.",
+      "keywords": [
+        "Know the industry",
+        "Tailored solutions",
+        "Higher value"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "sustainability",
+      "file": "sustainability.html",
+      "eyebrow": "Sustainability",
+      "title": "Kiến tạo giá trị bền vững cho thế hệ tương lai",
+      "seo_title": "Phát triển bền vững & ESG | LPC",
+      "description": "Chiến lược ESG của LPC: giảm phát thải CO₂ hướng tới Net Zero, công trình xanh, sử dụng tài nguyên hiệu quả và trách nhiệm với cộng đồng.",
+      "keywords": [
+        "People",
+        "Planet",
+        "Progress",
+        "Together"
+      ],
+      "priority": "0.7"
+    },
+    {
+      "slug": "partners",
+      "file": "partners.html",
+      "eyebrow": "Đối tác",
+      "title": "Cùng đối tác kiến tạo giá trị lớn hơn",
+      "seo_title": "Đối tác chiến lược | LPC — Cùng kiến tạo giá trị lớn hơn",
+      "description": "Mạng lưới 50+ đối tác chiến lược tại 10+ quốc gia của LPC trong tư vấn thiết kế, công nghệ, vật liệu, thi công và học thuật.",
+      "keywords": [
+        "Stronger together",
+        "For a better tomorrow"
+      ],
+      "priority": "0.7"
+    },
+    {
+      "slug": "trust-center",
+      "file": "trust-center.html",
+      "eyebrow": "Trust Center",
+      "title": "Nền tảng niềm tin cho mọi công trình",
+      "seo_title": "Trust Center — Chứng chỉ, tuân thủ & bảo mật | LPC",
+      "description": "Chứng chỉ ISO 9001, ISO 14001, ISO 45001, ISO 19650, quy trình quản trị rủi ro, tuân thủ pháp lý và bảo mật dữ liệu tại LPC.",
+      "keywords": [
+        "Transparency",
+        "Compliance",
+        "Safety",
+        "Security",
+        "Trust"
+      ],
+      "priority": "0.7"
+    },
+    {
+      "slug": "insights",
+      "file": "insights.html",
+      "eyebrow": "Insights",
+      "title": "Kiến thức hôm nay cho công trình tốt hơn ngày mai",
+      "seo_title": "Insights — Tin tức, xu hướng & kiến thức kỹ thuật | LPC",
+      "description": "Bài viết, xu hướng và kinh nghiệm thực tế về kỹ thuật, BIM, quản lý dự án, pháp lý và phát triển bền vững từ đội ngũ chuyên gia LPC.",
+      "keywords": [
+        "People",
+        "Ideas",
+        "Technology",
+        "Real Impact"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "about",
+      "file": "about.html",
+      "eyebrow": "Giới thiệu LPC",
+      "title": "Hành trình kiến tạo giá trị bền vững",
+      "seo_title": "Giới thiệu LPC — Hành trình kiến tạo giá trị bền vững từ 2007",
+      "description": "LPC thành lập năm 2007, kết nối kinh nghiệm Việt Nam – Pháp với 500+ dự án, 100+ đối tác. Câu chuyện, giá trị cốt lõi và đội ngũ lãnh đạo.",
+      "keywords": [
+        "Local expertise",
+        "Global knowledge",
+        "Lasting value"
+      ],
+      "priority": "0.8"
+    },
+    {
+      "slug": "contact",
+      "file": "contact.html",
+      "eyebrow": "Cùng hợp tác",
+      "title": "Biến ý tưởng thành công trình thực tế",
+      "seo_title": "Liên hệ & Gửi yêu cầu (RFP) | LPC",
+      "description": "Liên hệ LPC hoặc gửi yêu cầu báo giá dự án (RFP) — phản hồi trong 24 giờ. Trụ sở Hà Nội, văn phòng đại diện Paris.",
+      "keywords": [
+        "People",
+        "Expertise",
+        "Partnership",
+        "Real Projects"
+      ],
+      "priority": "0.9"
+    },
+    {
+      "slug": "engineering-tools",
+      "file": "engineering-tools.html",
+      "eyebrow": "Engineering Tools",
+      "title": "Công cụ kỹ thuật cho những quyết định tốt hơn",
+      "seo_title": "Engineering Tools — Công cụ kỹ thuật trực tuyến miễn phí | LPC",
+      "description": "Tính toán, so sánh, kiểm tra, dự toán và đánh giá hồ sơ trực tuyến: Ubot Quick Design, Punching Check, dự toán nhanh, Carbon Estimator, AI Assistant.",
+      "keywords": [
+        "BIM",
+        "Structure",
+        "Cost",
+        "Sustainability"
+      ],
+      "priority": "0.9"
+    }
   ]
 }

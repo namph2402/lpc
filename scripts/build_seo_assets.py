@@ -28,31 +28,14 @@ BLUE_LIGHT = (111, 162, 255)
 WHITE = (255, 255, 255)
 
 
-def bezier(p0, p1, p2, p3, steps=40):
-    pts = []
-    for i in range(steps + 1):
-        t = i / steps
-        x = (1 - t) ** 3 * p0[0] + 3 * (1 - t) ** 2 * t * p1[0] + 3 * (1 - t) * t**2 * p2[0] + t**3 * p3[0]
-        y = (1 - t) ** 3 * p0[1] + 3 * (1 - t) ** 2 * t * p1[1] + 3 * (1 - t) * t**2 * p2[1] + t**3 * p3[1]
-        pts.append((x, y))
-    return pts
+LOGO_WHITE = ROOT / "assets/img/logo-lpc-h-white.png"
 
 
-def draw_logo(d, x, y, s=1.6):
-    """Biểu tượng tháp LPC (giống SVG trong js/layout.js), gốc (x, y), tỷ lệ s."""
-    def P(px, py):
-        return (x + px * s, y + py * s)
-
-    strokes = [
-        (RED, 4, [(4, 50), (16, 40), (22, 24), (25, 2)], [(25, 2), (28, 24), (34, 40), (46, 50)]),
-        (BLUE_LIGHT, 3, [(13, 50), (21, 42), (24, 30), (25, 16)], [(25, 16), (26, 30), (29, 42), (37, 50)]),
-        (WHITE, 2.4, [(20, 50), (24, 44), (25, 38), (25, 30)], [(25, 30), (25, 38), (26, 44), (30, 50)]),
-    ]
-    for color, width, a, b in strokes:
-        for seg in (a, b):
-            d.line(bezier(*[P(*p) for p in seg]), fill=color, width=int(width * s), joint="curve")
-    d.text(P(54, 6), "LPC", font=ImageFont.truetype(BOLD_IT, int(30 * s)), fill=WHITE)
-    d.text(P(55, 41), "Responsive to change", font=ImageFont.truetype(REG, int(9 * s)), fill=(200, 210, 228))
+def paste_logo(img, x, y, h=72):
+    """Dán logo thật (bản chữ trắng) lên ảnh OG."""
+    logo = Image.open(LOGO_WHITE).convert("RGBA")
+    w = round(logo.width * h / logo.height)
+    img.paste(logo.resize((w, h), Image.LANCZOS), (x, y), logo.resize((w, h), Image.LANCZOS))
 
 
 def wrap(d, text, font, max_w):
@@ -103,7 +86,7 @@ def render(page):
     d = ImageDraw.Draw(img, "RGBA")
     pad = 72
 
-    draw_logo(d, pad, 52)
+    paste_logo(img, pad, 44)
 
     # Eyebrow
     ey_font = ImageFont.truetype(BOLD, 22)

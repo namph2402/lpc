@@ -11,6 +11,7 @@ Tài liệu mô tả quy tắc màu sắc, typography, khoảng cách, thành ph
 | Sáng / tối (chạy trong `<head>`) | [`js/theme.js`](js/theme.js) |
 | Dữ liệu SEO từng trang | [`scripts/pages.json`](scripts/pages.json) |
 | Sinh ảnh OG + sitemap + robots | [`scripts/build_seo_assets.py`](scripts/build_seo_assets.py) |
+| Sinh bộ logo + favicon từ file gốc | [`scripts/make_logo.py`](scripts/make_logo.py) |
 | Trang mẫu chuẩn | [`index.html`](index.html) |
 | CSS riêng từng trang (chỉ khi thật cần) | [`css/pages/`](css/pages/) — `engineering`, `digital-data`, `industries`, `contact` |
 
@@ -81,6 +82,40 @@ Dùng cơ chế **color mode của Bootstrap 5.3**: thuộc tính `data-bs-theme
 
 ---
 
+## 3b. Logo
+
+| File | Dùng ở đâu |
+|---|---|
+| `assets/img/logo-lpc-h.png` | Header, nền sáng (ngang: biểu tượng + chữ) |
+| `assets/img/logo-lpc-h-white.png` | Header nền tối, footer |
+| `assets/img/logo-lpc.png` / `-white.png` | Bản xếp dọc (tài liệu, in ấn) |
+| `assets/img/logo-mark.png` | Riêng biểu tượng tháp |
+| `assets/favicon.svg`, `assets/apple-touch-icon.png` | Favicon, icon app |
+| `assets/img/logo-source.png` | File gốc, giữ để sinh lại |
+
+Header tự đổi giữa hai bản qua class `.logo-on-light` / `.logo-on-dark`. Khi có file logo mới:
+
+```bash
+python3 scripts/make_logo.py assets/img/logo-source.png   # sinh lại toàn bộ bộ logo + favicon
+python3 scripts/build_seo_assets.py                       # ảnh OG dùng logo mới
+```
+
+Khoảng trống quanh logo tối thiểu bằng nửa chiều cao logo. Không đặt logo bản màu lên nền tối — dùng bản trắng.
+
+---
+
+## 3c. Ngôn ngữ
+
+Giao diện dùng **tiếng Việt**. Ba nhóm giữ nguyên tiếng Anh:
+
+1. **Slogan thương hiệu:** "Responsive to change", "Engineering today for a better tomorrow.", cột từ khóa trong hero (People · Projects · Technology · Sustainability), dòng "Engineering · Technology · People" ở footer.
+2. **Tên mảng dịch vụ:** Engineering, Digital Engineering, PM/CM, Tech Hub, Digital & Data, Engineering Tools, Sustainability, Insights, Trust Center.
+3. **Thuật ngữ chuyên ngành:** BIM, CDE, Digital Twin, Scan to BIM, Data Platform, ESG, IoT, ISO 19650, HSE…
+
+Nhãn điều hướng và nhãn giao diện dịch hết: Trang chủ, Năng lực, Dự án, Lĩnh vực, Giới thiệu, Đối tác, các nhãn tab, nút và eyebrow.
+
+---
+
 ## 4. Typography
 
 | Cấp | Class | Cỡ chữ | Weight | Kiểu |
@@ -128,8 +163,8 @@ Cấu trúc trang chuẩn:
 |---|---|---|
 | < 576px | Logo + icon + menu offcanvas | 1–2 cột |
 | ≥ 768px | + nút "Liên hệ / RFP" | 2–3 cột |
-| ≥ 992px | | 3–5 cột |
-| ≥ 1400px | Menu ngang đầy đủ | |
+| ≥ 992px | Vẫn dùng menu offcanvas | 3–5 cột |
+| ≥ 1200px | Menu ngang đầy đủ | |
 
 ---
 
